@@ -164,10 +164,10 @@ This is add property to be lime.
   color: var(--htb-lime);
   /* this is add property button  */
 }
-
 ```
 
 This is the table and its rounded.
+
 ```css
 /* Fix the borders and add a radius variable */
 :root table {
@@ -197,7 +197,7 @@ tr:last-child td:last-child {
 :root :is(td, th) {
   border-width: 0 var(--table-border-width) var(--table-border-width) 0;
 }
-````
+```
 
 # Foundation
 
@@ -286,4 +286,4 @@ body {
 
 - Listen to community feedback from discord.
 
-Also guys if you have come this far please help me make this better. Join the [hacthebox discord](https://discord.com/invite/hackthebox) server we can discuss there.
+Also if you have come this far please help me make this better. Join the [hacthebox discord](https://discord.com/invite/hackthebox) server we can discuss there.

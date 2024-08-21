@@ -1,7 +1,9 @@
 # Obsidian theme for hackthebox
 
-A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [obsidian](https://obsidian.md/).
+A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [Obsidian](https://obsidian.md/).
+
 ![Image of htb obsidian theme](img/image1.png)
+
 ![Image of htb obsidian theme](img/image2.png)
 
 ## Installation
