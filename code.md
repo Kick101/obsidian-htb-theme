@@ -67,6 +67,8 @@ There are some plans for future and they are the following:
 
 - Use less specific selectors.
 
+Since Obsidian used `--code-comment` to color some elements, a new variable `--htb-border` was made to prevent these elements from inheriting the new color we set for `--code-comment`.
+
 ```css
 .theme-dark {
   color: #a4b1cd;
@@ -84,6 +86,8 @@ There are some plans for future and they are the following:
   --htb-heading: #cad2e2;
   /* drivider */
   --htb-divider-color: #1a2332;
+	/* border */
+	--htb-border: #4a5466;
 }
 
 /* same color copy paste from dark because htb has no light theme  */
@@ -97,6 +101,7 @@ There are some plans for future and they are the following:
   --htb-lime: #9fef00;
   --htb-heading: #cad2e2;
   --htb-divider-color: #1a2332;
+	--htb-border: #4a5466;
 }
 ```
 
@@ -127,12 +132,188 @@ There are callouts. Because we follow a simple roundness we add it since there i
 ```
 
 code color theme is copied from academy and where i could not find academy colors i took from [silofy/hackthebox](https://github.com/silofy/hackthebox)
-
-comments in code are italic
+Two additional colors were added: `--code-attribute` and `--code-func-name`.
 
 ```css
+body {
+	/* htb vscode theme  */
+	--code-background: var(--background-secondary);
+	/* now look we can't give it the same bg as vscode has because then it wont stand out  */
+	/* so i am using seconder one  */
+	/* if you have better ideas do tell me  */
+	--code-normal: #a4b1cd;
+	--code-comment: #c5d1eb;
+	--code-function: #ffcc5c;
+	--code-important: #ffaf00;
+	--code-keyword: #cf8dfb;
+	--code-operator: #ff8484;
+	--code-property: #a4b1cd;
+	--code-punctuation: #a4b1cd;
+	--code-string: #c5f467;
+	--code-tag: #ffaf00;
+	--code-value: #5cb2ff;
+	--code-attribute: #ff3e3e;
+	--code-func-name: #2e6cff;		/* for lack of a better name */
+	--code-white-space: pre;
+	--code-size: var(--code-size);
+}
+```
+
+The syntax highlighting for Reading Mode was copied from Academy's prism.css. We then tried to match Editing Mode's syntax highlighting to prism.css as closely as possible. They can't be exactly the same since Obsidian uses different renderers for Editing and Reading Mode.
+
+```css
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--code-comment);
+}
+
+.token.punctuation {
+	color: var(--code-punctuation);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: var(--code-attribute);
+}
+
+.token.function-name {
+	color: var(--code-func-name);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: var(--code-important);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: var(--code-function);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: var(--code-operator);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: var(--code-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: var(--code-value);
+}
+
+.token.important,
+.token.bold {
+	font-weight: 700;
+}
+
+.token.inserted {
+	color: var(--htb-lime);
+}
+
 .cm-comment {
-  font-style: italic;
+	color: var(--code-comment);
+	/* font-style: italic; */
+}
+
+.cm-punctuation,
+.cm-bracket,
+.cm-hr {
+	color: var(--code-punctuation) !important;
+}
+
+.cm-link {
+	color: var(--code-property);
+}
+
+.cm-qualifier,
+.cm-string,
+.cm-variable-2,
+.cm-def {
+	color: var(--code-string);
+}
+
+.cm-tag,
+.cm-attribute {
+	color: var(--code-attribute);
+}
+
+.cm-number,
+.cm-atom {
+	color: var(--code-important);
+}
+
+.cm-keyword,
+.cm-builtin,
+.cm-operator {
+	color: var(--code-operator);
+}
+.cm-property,
+.cm-type {
+	color: var(--code-function);
+}
+
+.cm-inline-code,
+.cm-math,
+.cm-variable,
+.cm-variable-3,
+.cm-meta {
+	color: var(--code-normal);
+}
+
+.cm-operator,
+.cm-string-2 {
+	color: var(--code-value);
+}
+```
+
+Code blocks closely resemble Academy's code blocks.
+- The font size for text in all code blocks is 87.5% of the global font size.
+- The color of the inline code block text is HTB green.
+- Inline code blocks have no padding or background color.
+
+```css
+/* inline code has color lime and non inline code has normal code color for reading mode */
+code {
+    color: var(--htb-lime) !important;
+	background-color: transparent !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+	padding: 0 0 !important;
+}
+
+code[data-line="0"] {
+    color: var(--code-normal) !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+}
+
+/* the inline `code` goes away and a span tag replaces that in editing mode */
+span.cm-inline-code {
+    color : var(--htb-lime) !important;
+	background-color: transparent !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+	padding: 0 0 !important;
+}
+
+.HyperMD-codeblock {
+	font-size: calc(var(--font-text-size) * 0.875) !important;
 }
 ```
 
