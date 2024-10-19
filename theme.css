@@ -58,6 +58,8 @@ svg * {
 	--htb-heading: #cad2e2;
 	/* drivider */
 	--htb-divider-color: #1a2332;
+	/* border */
+	--htb-border: #4a5466;
 }
 
 /* same color copy paste from dark because htb has no light theme  */
@@ -71,6 +73,7 @@ svg * {
 	--htb-lime: #9fef00;
 	--htb-heading: #cad2e2;
 	--htb-divider-color: #1a2332;
+	--htb-border: #4a5466;
 }
 
 /* basically the same but swapped the bg primary and secondery */
@@ -91,13 +94,13 @@ body {
 
 /* .theme-light .setting-item button {
   --text-on-accent: white !important;
-  --interactive-normal: var(--code-comment) !important;
+  --interactive-normal: var(--htb-border) !important;
   color: var(--text-on-accent) !important;
 } */
 
 /* .theme-light {
   --interactive-hover: var(--background-primary);
-  --interactive-normal: var(--code-comment);
+  --interactive-normal: var(--htb-border);
 } */
 
 /* .setting-item button.mod-cta {
@@ -121,7 +124,7 @@ body {
 
 /* dropdown  */
 body {
-	--dropdown-background: var(--code-comment);
+	--dropdown-background: var(--htb-border);
 	--dropdown-background-hover: var(--background-secondary);
 
 }
@@ -155,7 +158,7 @@ body {
 body {
 	--tab-text-color: var(--htb-heading);
 	--tab-radius-active: 5px 5px 0px 0px;
-	--tab-text-color-focused: var(--code-comment);
+	--tab-text-color-focused: var(--htb-border);
 }
 
 /* text input  */
@@ -223,7 +226,7 @@ body {
 	/* so i am using seconder one  */
 	/* if you have better ideas do tell me  */
 	--code-normal: #a4b1cd;
-	--code-comment: #4a5466;
+	--code-comment: #c5d1eb;
 	--code-function: #ffcc5c;
 	--code-important: #ffaf00;
 	--code-keyword: #cf8dfb;
@@ -233,12 +236,157 @@ body {
 	--code-string: #c5f467;
 	--code-tag: #ffaf00;
 	--code-value: #5cb2ff;
+	--code-attribute: #ff3e3e;
+	--code-func-name: #2e6cff;		/* for lack of a better name */
 	--code-white-space: pre;
 	--code-size: var(--code-size);
 }
 
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--code-comment);
+}
+
+.token.punctuation {
+	color: var(--code-punctuation);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: var(--code-attribute);
+}
+
+.token.function-name {
+	color: var(--code-func-name);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: var(--code-important);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: var(--code-function);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: var(--code-operator);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: var(--code-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: var(--code-value);
+}
+
+.token.important,
+.token.bold {
+	font-weight: 700;
+}
+
+.token.inserted {
+	color: var(--htb-lime);
+}
+
 .cm-comment {
-	font-style: italic;
+	color: var(--code-comment);
+	/* font-style: italic; */
+}
+
+.cm-punctuation,
+.cm-bracket,
+.cm-hr {
+	color: var(--code-punctuation) !important;
+}
+
+.cm-link {
+	color: var(--code-property);
+}
+
+.cm-qualifier,
+.cm-string,
+.cm-variable-2,
+.cm-def {
+	color: var(--code-string);
+}
+
+.cm-tag,
+.cm-attribute {
+	color: var(--code-attribute);
+}
+
+.cm-number,
+.cm-atom {
+	color: var(--code-important);
+}
+
+.cm-keyword,
+.cm-builtin,
+.cm-operator {
+	color: var(--code-operator);
+}
+.cm-property,
+.cm-type {
+	color: var(--code-function);
+}
+
+.cm-inline-code,
+.cm-math,
+.cm-variable,
+.cm-variable-3,
+.cm-meta {
+	color: var(--code-normal);
+}
+
+.cm-operator,
+.cm-string-2 {
+	color: var(--code-value);
+}
+
+/* inline code has color lime and non inline code has normal code color for reading mode */
+code {
+    color: var(--htb-lime) !important;
+	background-color: transparent !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+	padding: 0 0 !important;
+}
+
+code[data-line="0"] {
+    color: var(--code-normal) !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+}
+
+/* the inline `code` goes away and a span tag replaces that in editing mode */
+span.cm-inline-code {
+    color : var(--htb-lime) !important;
+	background-color: transparent !important;
+	font-size: calc(var(--font-text-size) * 0.875) !important;
+	padding: 0 0 !important;
+}
+
+.HyperMD-codeblock {
+	font-size: calc(var(--font-text-size) * 0.875) !important;
 }
 
 /* embed  */
@@ -265,7 +413,7 @@ body {
 	--h5-size: 1.12em;
 	--h6-size: 1.12em;
 	/* weight  */
-	--h1-weight: 800;
+	--h1-weight: 700;
 	--h2-weight: 700;
 	--h3-weight: 700;
 	--h4-weight: 700;
@@ -361,7 +509,7 @@ body {
 	--table-header-color: var(--htb-heading);
 	--table-text-color: var(--htb-text-color);
 	/* --table-border-color: var(--htb-text-color) !important; */
-	--table-border-color: var(--code-comment) !important;
+	--table-border-color: var(--htb-border) !important;
 
 	/* i mean for real i was expectine padding property but it does not exist	 */
 	--table-row-alt-background: var(--background-secondary);
@@ -423,14 +571,14 @@ body {
 	--accent-a: 1;
 	/* this thing resolved to the htb lime color  */
 	--background-primary-alt: var(--background-secondary);
-	--background-modifier-border: var(--code-comment);
-	--background-modifier-border-hover: var(--code-comment);
+	--background-modifier-border: var(--htb-border);
+	--background-modifier-border-hover: var(--htb-border);
 	--background-modifier-border-focus: none;
 	--background-modifier-error: var(--code-operator);
 	--background-modifier-success: var(--code-string);
 	--background-modifier-message: var(--background-primary);
 	/* interactive  */
-	--interactive-normal: var(--code-comment) !important;
+	--interactive-normal: var(--htb-border) !important;
 	--interactive-hover: var(--background-secondary);
 	/* --interactive-accent: ;no need because of hsl */
 	/* text colors  */
@@ -555,7 +703,7 @@ body {
 /* divider  */
 body {
 	/* --divider-color: var(--background-secondary); */
-	--divider-color: var(--code-comment);
+	--divider-color: var(--htb-border);
 	/* will need to come back to this */
 	--divider-color-hover: var(--htb-lime);
 	--divider-width: 1px;
