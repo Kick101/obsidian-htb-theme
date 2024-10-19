@@ -1,7 +1,7 @@
 # How it works
 
 Obsidian uses [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) to style the themes.
-The way to make the theme is to look up the CSS classes from the [documentation](https://docs.obsidian.md/Reference/CSS+variables/CSS+variables) and then edit the default values of those classes. The file stays in `vault/.obsidian/themes/Hackthebox`. Inside which there is a [theme.css](theme.css) file that is where all the code is and the other [Mainfest.json](manifest.json) holds information about the theme.
+The way to make the theme is to look up the CSS variable from the [documentation](https://docs.obsidian.md/Reference/CSS+variables/CSS+variables) and then edit the default values of those variable. The file stays in `vault/.obsidian/themes/Hackthebox`. Inside which there is a [theme.css](theme.css) file that is where all the code is and the other [Mainfest.json](manifest.json) holds information about the theme.
 
 - Foundations: Abstracted variables for colors, spacing, typography and more
 
@@ -51,7 +51,7 @@ body {
 
 now notice here i begin with FOUNDATION then i say border and then the styles for border and the next item was colors which is why another comment another body tag.
 
-I also try to be as vivid as possible. In some places we need to implement an ugly fix when the obsidian css classes simply does not have a class name for it. I will document each ugly fix so we can work on it and make it better. The code is pretty messy but will be polished along the way.
+I also try to be as vivid as possible. In some places we need to implement an ugly fix when the obsidian css variable simply does not have a class name for it. I will document each ugly fix so we can work on it and make it better. The code is pretty messy but will be polished along the way.
 
 I lost the ugly fixes docs file :( (git commit fail)
 
@@ -61,7 +61,7 @@ first we begin with the initial variables that we will use all over the file.
 
 There are some plans for future and they are the following:
 
-- Use only the CSS classes.
+- Use only the CSS variable.
 
 - Avoid using `!important`.
 
