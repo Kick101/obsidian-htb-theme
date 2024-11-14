@@ -199,22 +199,27 @@ body {
 
 /* callout  */
 body {
-	--callout-border-width: 2px;
-	--callout-padding: 10px 20px 20px 20px;
+	/* --callout-border-width: 2px ; */
+	/* --callout-padding: 10px 20px 20px 20px; */
 	/*top already has padding*/
 	--callout-radius: 10px;
 	--callout-blend-mode: normal;
 	/* --callout-title-color: var(--htb-lime); */
-	--callout-title-padding: 5px;
+	/* --callout-title-padding: 5px; */
 	--callout-title-size: 1.2em;
 	--callout-title-weight: bold;
 	--callout-content-padding: 0px 15px 0px 15px;
 	/*only in x axis*/
-	--callout-content-background: var(--background-secondary);
+	/* --callout-content-background: var(--background-secondary); */
 }
 
 .callout-content {
 	border-radius: 7px;
+}
+
+/* removes the annoying box (square) shadow on hover for rounded callouts */
+.cm-embed-block.cm-callout:hover {
+	box-shadow: none !important;
 }
 
 
@@ -237,7 +242,8 @@ body {
 	--code-tag: #ffaf00;
 	--code-value: #5cb2ff;
 	--code-attribute: #ff3e3e;
-	--code-func-name: #2e6cff;		/* for lack of a better name */
+	--code-func-name: #2e6cff;
+	/* for lack of a better name */
 	--code-white-space: pre;
 	--code-size: var(--code-size);
 }
@@ -346,6 +352,7 @@ body {
 .cm-operator {
 	color: var(--code-operator);
 }
+
 .cm-property,
 .cm-type {
 	color: var(--code-function);
@@ -366,20 +373,20 @@ body {
 
 /* inline code has color lime and non inline code has normal code color for reading mode */
 code {
-    color: var(--htb-lime) !important;
+	color: var(--htb-lime) !important;
 	background-color: transparent !important;
 	font-size: calc(var(--font-text-size) * 0.875) !important;
 	padding: 0 0 !important;
 }
 
 code[data-line="0"] {
-    color: var(--code-normal) !important;
+	color: var(--code-normal) !important;
 	font-size: calc(var(--font-text-size) * 0.875) !important;
 }
 
 /* the inline `code` goes away and a span tag replaces that in editing mode */
 span.cm-inline-code {
-    color : var(--htb-lime) !important;
+	color: var(--htb-lime) !important;
 	background-color: transparent !important;
 	font-size: calc(var(--font-text-size) * 0.875) !important;
 	padding: 0 0 !important;
