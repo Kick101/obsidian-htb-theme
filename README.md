@@ -16,6 +16,9 @@ A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [Obsi
 1. Search for `Hackthebox` in the Search field text.
 1. Click `Install and use` and then you're done! 🎉🥳
 
+> [!NOTE]  
+> For the best academy like experience use `Neue Haas Unica W1G` for Text font and `JetBrains Mono` for Monospace font (optional)
+
 ### Manual install
 
 1. Move to the themes direcory of your vault.
