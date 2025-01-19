@@ -47,4 +47,4 @@ A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [Obsi
 
 - [Hackthebox Academy](https://academy.hackthebox.com/)
 - [HTB Vscode Theme](https://github.com/silofy/hackthebox)
-- mto, calc, bingbong, goblin, ippsec, sparkling, mickhat ([HTB discord memebers & staff](https://discord.com/invite/hackthebox))
+- mto, calc, bingbong, goblin, ippsec, sparkling, mickhat, 0xDTC ([HTB discord memebers & staff](https://discord.com/invite/hackthebox))
