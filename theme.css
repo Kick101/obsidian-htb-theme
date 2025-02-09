@@ -191,63 +191,55 @@ body {
 	--blockquote-color: inherit;
 } */
 
-/* .mod-empty-attachment {
+.mod-empty-attachment {
 	background-color: var(--background-secondary);
 	color: #ff8484 !important;
-} */
+}
 
 /* --------------------------- golam old css-------------------------- */
 
 /* --------------------------- 0xdtc new css-------------------------- */
 body {
     /* Shared blockquote styles */
-    /* --blockquote-background-color: #0b121f;
-    --blockquote-border-thickness: 5px;
+    --blockquote-background-color: #0b121f;
+    --blockquote-border-thickness: 4px;
     --blockquote-border-color: var(--htb-lime);
     --blockquote-font-style: italic !important;
     --blockquote-color: inherit;
 	--blockquote-padding: 10px ;
-	--blockquote-border-radius: 5px; */
+	--blockquote-border-radius: 5px;
 }
 
 /* Blockquote styling for Read Only mode */
-/* .el-blockquote > blockquote {
+.el-blockquote > blockquote {
     background-color: var(--blockquote-background-color);
     border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
     color: var(--blockquote-color);
     font-style: var(--blockquote-font-style);
     border-radius: var(--blockquote-border-radius);
     padding: var(--blockquote-padding);
-} */
+}
 
 /* Blockquote styling for Live Preview mode */
-/* div.HyperMD-quote{
+div.HyperMD-quote{
     background-color: var(--blockquote-background-color);
-    border-left: solid var(--blockquote-border-color);
+    border-left:var(--blockquote-border-thickness) solid var(--blockquote-border-color);
     color: var(--blockquote-color);
-	font-style: italic;
+	font-style: italic !important;
+	padding: var(--blockquote-padding)  !important;
 	border-radius: var(--blockquote-border-radius);
-} */
+	text-indent: 0px !important;
+}
+
 /* --------------------------- 0xdtc new css-------------------------- */
 
 /* callout  */
-body {
-	--callout-border-width: 2px !important;
-	/* --callout-padding: 10px 20px 10px 20px; */
-	/*top already has padding*/
-	--callout-radius: 10px;
-	--callout-blend-mode: normal !important;
-	/* --callout-title-color: var(--htb-lime); */
-	/* --callout-title-padding: 5px; */
-	--callout-title-size: 1em !important;
-	--callout-title-weight: bold !important;
-	--callout-content-padding: 0px 15px 0px 15px;
-	/*only in x axis*/
-	--callout-content-background: var(--background-secondary);
-}
+/* body {
+
+} */
 
 .callout-content {
-	border-radius: 5px;
+	border-radius: 7px;
 }
 
 /* removes the annoying box (square) shadow on hover for rounded callouts */
@@ -587,10 +579,10 @@ tr:last-child td:last-child {
 }
 
 /* tags  */
-body {
+/* body { */
 	/* --tag-color: var(--htb-lime); */
 	/* imo looks good enough skip */
-}
+/* } */
 
 /* ======================================================================================================= */
 /* ======================================================================================================= */
@@ -708,7 +700,7 @@ body {
 /* ======================================================================================================= */
 /* canvas    */
 body {
-	--canvas-background: (--background-secondary);
+	--canvas-background: var(--background-secondary);
 }
 
 /* file explorer */
@@ -797,3 +789,10 @@ body {
 
 /* animation  */
 /* todo later */
+
+.workspace .tappable.is-active.mod-active svg{
+	fill:var(--htb-text-color);
+}
+div.workspace-tab-header-inner-close-button svg{
+	stroke:var(--htb-text-color) !important;
+}
