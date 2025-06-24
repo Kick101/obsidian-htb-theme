@@ -633,6 +633,11 @@ button {
   color: var(--text-on-accent);
 }
 
+/* For keeping a part highlighted #Might have issues or break something */
+span.cm-highlight {
+  color: var(--text-on-accent) !important;
+}
+
 /* so this is for text inside the selection i was starting to think why no css class for it  */
 
 span.search-result-file-matched-text {
