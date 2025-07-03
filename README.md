@@ -1,25 +1,14 @@
 # Obsidian theme for hackthebox
 
-A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [Obsidian](https://obsidian.md/).
+## Fork with custom styling
 
 ![Image of htb obsidian theme](img/image1.png)
 
-![Image of htb obsidian theme](img/image2.png)
-
-## Installation
-
-### Auto install
-
-1. Open **Settings** (bottom left corner ⚙️).
-1. Go to **Appearance** tab.
-1. Inside **Themes** click **Manage**.
-1. Search for `Hackthebox` in the Search field text.
-1. Click `Install and use` and then you're done! 🎉🥳
 
 > [!NOTE]  
 > For the best academy like experience use `Neue Haas Unica W1G` for Text font and `JetBrains Mono` for Monospace font (optional)
 
-### Manual install
+## Installation
 
 1. Move to the themes direcory of your vault.
 
@@ -37,11 +26,6 @@ A [Hackthebox Academy](https://academy.hackthebox.com/) inspired theme for [Obsi
 
 1. Enjoy! 🎉🥳
 
-## Additional information
-
-- Any PR or contributions are welcome.
-- Code documentation is [here](code.md)
-- More images can be found inside [images](img)
 
 ## Acknowledgement & Credits
 
